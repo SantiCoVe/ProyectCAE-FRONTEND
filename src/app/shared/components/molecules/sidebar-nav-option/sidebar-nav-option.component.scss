@@ -1,48 +1,76 @@
-.containerButtonNav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 16px 10px;
+.containerButtonNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 10px;
 }
 
 .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  /* Estado normal */
+  .icon {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 8px 12px;
-    border: none;
+    color: var(--muted-foreground); // Gris
+    transition: color 0.2s ease;
+  }
+
+  .label {
+    flex: 1;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--foreground); // Blanco
+    transition: color 0.2s ease;
+  }
+
+  /* Hover */
+  &:hover {
     background-color: #0f171f;
-    border-radius: var(--radius);
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s ease;
 
-    &:hover {
-        background: var(--sidebar-accent);
-    }
-
-    &.active {
-        background-color: #0f171f;
-        color: var(--primary);
-    }
-
-    .icon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .icon {
+      color: var(--muted-foreground); // Sigue gris
     }
 
     .label {
-        flex: 1;
-        text-align: left;
+      color: var(--foreground); // Sigue blanco
+    }
+  }
+
+  /* Activo */
+  &.active {
+    background-color: #0f171f;
+
+    .icon {
+      color: var(--primary); // Azul
     }
 
-    .badge {
-        padding: 0.15rem 0.5rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        background: var(--muted);
-        color: var(--muted-foreground);
+    .label {
+      color: var(--primary); // Azul
+      font-weight: 500;
     }
+  }
+
+  .badge {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2px 6px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+    color: red;
+    background-color: #31131f;
+  }
 }

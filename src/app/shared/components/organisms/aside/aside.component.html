@@ -33,5 +33,31 @@
       (optionClick)="setActiveSection('trash')">
     </app-sidebar-nav-option>
   </div>
+<<<<<<< HEAD
+  <div class="asideFolders">
+    <div class="containerFolders">
+      <div class="foldersHeader">
+        <p>CARPETAS</p>
+        <lucide-icon
+          [img]="plusIcon"
+          class="icon"
+          [size]="16"
+          [color]="'currentColor'"
+          >
+        </lucide-icon>
+      </div>
+      <div class="foldersBody">
+        @for (folder of folders; track folder.id) {
+          <app-folder-item-aside
+            [folder]="folder"
+            [selected]="selectedFolderId === folder.id"
+            (folderClick)="selectFolder(folder)">
+          </app-folder-item-aside>
+        }
+      </div>
+    </div>
+  </div>
+=======
 
+>>>>>>> 8054e10b4e5d59da2aa824e96b23fcfa190518de
 </aside>

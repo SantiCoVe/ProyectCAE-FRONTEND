@@ -1,7 +1,7 @@
 <div class="containerButtonNav">
   <button class="nav-item" [class.active]="active" (click)="onClick()">
     <lucide-icon
-      [img]="icon" class="icon" [size]="16">
+      [img]="icon" class="icon" [size]="16" [color]="'currentColor'">
     </lucide-icon>
     <span class="label">{{ label }}</span>
     @if (count !== undefined) {

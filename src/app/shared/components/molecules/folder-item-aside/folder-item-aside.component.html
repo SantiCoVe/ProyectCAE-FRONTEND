@@ -1,0 +1,49 @@
+<button
+  class="folder-item"
+  [class.selected]="selected"
+  (click)="onClick()"
+>
+  <div class="folder-left">
+    <!-- Flecha para expandir subcarpetas -->
+    @if (folder.children && folder.children.length > 0) {
+      <lucide-icon
+        [img]="chevronIcon"
+        class="chevron"
+        [size]="14"
+        [color]="'currentColor'"
+        [class.expanded]="expanded"
+        (click)="toggleExpanded($event)">
+      </lucide-icon>
+    } @else {
+      <span class="chevron-placeholder"></span>
+    }
+
+    <!-- Icono de carpeta -->
+    <lucide-icon
+      [img]="folderIcon"
+      class="icon"
+      [size]="16"
+      [color]="'currentColor'"
+      >
+    </lucide-icon>
+
+    <!-- Nombre -->
+    <span class="folder-name">{{ folder.name }}</span>
+  </div>
+
+  <!-- Cantidad de elementos -->
+  <span class="folder-count">{{ folder.itemCount }}</span>
+</button>
+
+<!-- Subcarpetas -->
+@if (expanded && folder.children && folder.children.length > 0) {
+  <div class="children">
+    @for (child of folder.children; track child.id) {
+      <app-folder-item-aside
+        [folder]="child"
+        [selected]="selected"
+        (folderClick)="folderClick.emit()"
+      ></app-folder-item-aside>
+    }
+  </div>
+}
