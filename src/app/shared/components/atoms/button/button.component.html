@@ -1,1 +1,24 @@
-<p>button works!</p>
+<button
+  [type]="type"
+  [ngClass]="cssClasses"
+  [disabled]="disabled || loading"
+  (click)="handleClick($event)"
+>
+  <lucide-angular
+    *ngIf="loading"
+    [img]="LoaderCircle"
+    [size]="iconSize"
+    class="btn__icon spinning"
+    aria-hidden="true"
+  />
+
+  <lucide-angular
+    *ngIf="iconLeft && !loading"
+    [img]="Upload"
+    [size]="iconSize"
+    class="btn__icon"
+    aria-hidden="true"
+  />
+
+  <span class="btn__label">{{ label }}</span>
+</button>

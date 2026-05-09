@@ -1,0 +1,19 @@
+<div class="toggle">
+  <button
+    class="toggle__btn"
+    [class.toggle__btn--active]="activeView === 'grid'"
+    (click)="setView('grid')"
+    aria-label="Vista en cuadrícula"
+  >
+    <lucide-angular [img]="LayoutGrid" [size]="18" />
+  </button>
+
+  <button
+    class="toggle__btn"
+    [class.toggle__btn--active]="activeView === 'list'"
+    (click)="setView('list')"
+    aria-label="Vista en lista"
+  >
+    <lucide-angular [img]="List" [size]="18" />
+  </button>
+</div>

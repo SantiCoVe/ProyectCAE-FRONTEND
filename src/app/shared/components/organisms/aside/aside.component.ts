@@ -15,6 +15,7 @@ import { FolderItemAsideComponent } from '../../molecules/folder-item-aside/fold
 
 import { FolderInterface } from '../../../interfaces/folder.interface';
 import { MOCK_FOLDERS } from '../../../mock/folders.mock';
+import { ButtonComponent,ButtonClickEvent } from '../../atoms/button/button.component';
 
 @Component({
   selector: 'app-aside',
@@ -23,7 +24,9 @@ import { MOCK_FOLDERS } from '../../../mock/folders.mock';
     LogoComponent,
     LucideAngularModule,
     SidebarNavOptionComponent,
-    FolderItemAsideComponent
+    FolderItemAsideComponent,
+    SidebarNavOptionComponent,
+    ButtonComponent
   ],
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.scss'
@@ -51,5 +54,11 @@ export class AsideComponent {
 
   selectFolder(folder: FolderInterface): void {
     this.selectedFolderId = folder.id;
+  }
+
+  onSubir(event: ButtonClickEvent): void {
+    console.log('Subir clicked:', event);
+    // tu lógica aquí
+
   }
 }

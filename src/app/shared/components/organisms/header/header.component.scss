@@ -1,0 +1,20 @@
+.header-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #2c2c2e;
+
+  app-search-bar {
+    flex: 1;
+    max-width: 50%;
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}

@@ -1,0 +1,16 @@
+<div class="search-bar">
+  <lucide-angular
+    [img]="SearchIcon"
+    [size]="18"
+    class="search-bar__icon"
+    aria-hidden="true"
+  />
+  <input
+    class="search-bar__input"
+    type="text"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onInput($event)"
+    (keydown)="onKeydown($event)"
+  />
+</div>

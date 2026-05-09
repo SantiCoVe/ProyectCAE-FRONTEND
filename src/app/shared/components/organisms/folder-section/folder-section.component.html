@@ -1,0 +1,26 @@
+<div class="folder-section">
+  <h2 class="folder-section__title">Carpetas</h2>
+
+  <div class="folders-grid" *ngIf="activeView === 'grid'">
+    <app-card-folder
+      *ngFor="let folder of folders"
+      [name]="folder.name"
+      [itemCount]="folder.itemCount"
+      (folderClick)="onFolderClick($event)"
+    />
+  </div>
+
+  <div class="folders-list" *ngIf="activeView === 'list'">
+    <div
+      class="list-row"
+      *ngFor="let folder of folders"
+      (click)="onFolderClick(folder.name)"
+    >
+      <lucide-angular [img]="FolderIcon" [size]="20" class="list-row__icon" />
+      <div class="list-row__info">
+        <span class="list-row__name">{{ folder.name }}</span>
+        <span class="list-row__count">{{ folder.itemCount }} elementos</span>
+      </div>
+    </div>
+  </div>
+</div>

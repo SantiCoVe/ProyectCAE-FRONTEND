@@ -1,0 +1,63 @@
+.folder-section {
+  padding: 16px 24px 24px 24px;
+  overflow-y: auto;
+  flex: 1;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+}
+
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.folders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #1c1c1e;
+  border: 1px solid #2c2c2e;
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+
+  &:hover {
+    background: #242426;
+    border-color: #3a3a3c;
+  }
+
+  &__icon {
+    color: #0a84ff;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  &__count {
+    font-size: 13px;
+    color: #636366;
+  }
+}

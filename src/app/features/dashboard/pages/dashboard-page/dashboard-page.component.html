@@ -1,3 +1,17 @@
-<div>
-    <app-aside></app-aside>
+<div class="separte-side">
+  <app-aside />
+  <div class="main">
+    <app-header
+      [activeView]="activeView"
+      (viewChange)="onViewChange($event)"
+    />
+    <div class="welcome">
+        <h2 class="title-Home">Inicio</h2>
+        <p class="paragraph-Home">explora tus carpetas y documentos recientes</p>
+    </div>
+    <app-folder-section
+      [folders]="folders"
+      [activeView]="activeView"
+    />
+  </div>
 </div>
