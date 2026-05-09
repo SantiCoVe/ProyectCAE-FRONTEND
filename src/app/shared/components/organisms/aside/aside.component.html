@@ -1,0 +1,36 @@
+<aside>
+  <div class="asideLogoContainer">
+    <app-logo></app-logo>
+  </div>
+
+  <div class="asideNavOptions">
+    <app-sidebar-nav-option
+      label="Inicio"
+      [icon]="homeIcon"
+      [active]="activeSection === 'home'"
+      (optionClick)="setActiveSection('home')">
+    </app-sidebar-nav-option>
+
+    <app-sidebar-nav-option
+      label="Favoritos"
+      [icon]="starIcon"
+      [active]="activeSection === 'favorites'"
+      (optionClick)="setActiveSection('favorites')">
+    </app-sidebar-nav-option>
+
+    <app-sidebar-nav-option
+      label="Recientes"
+      [icon]="recentIcon"
+      [active]="activeSection === 'recent'"
+      (optionClick)="setActiveSection('recent')">
+    </app-sidebar-nav-option>
+
+    <app-sidebar-nav-option
+      label="Papelera"
+      [icon]="trashIcon"
+      [count]="3"
+      [active]="activeSection === 'trash'"
+      (optionClick)="setActiveSection('trash')">
+    </app-sidebar-nav-option>
+  </div>
+</aside>
