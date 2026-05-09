@@ -1,0 +1,143 @@
+:host {
+  display: inline-flex;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 12px;
+  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    filter 120ms ease,
+    transform 120ms ease,
+    opacity 120ms ease;
+
+  &:focus-visible {
+    outline: 3px solid rgba(0, 122, 255, 0.5);
+    outline-offset: 3px;
+  }
+
+  &:active:not(.btn--disabled, .btn--loading) {
+    transform: scale(0.96);
+    filter: brightness(0.92);
+  }
+
+  // ── Tamaños ──────────────────────────────────
+  &--sm {
+    padding: 7px 16px;
+    font-size: 14px;
+    min-height: 34px;
+    border-radius: 10px;
+  }
+
+  &--md {
+    padding: 11px 22px;
+    font-size: 16px;
+    min-height: 44px;
+    border-radius: 12px;
+  }
+
+  &--lg {
+    padding: 14px 28px;
+    font-size: 18px;
+    min-height: 52px;
+    border-radius: 14px;
+  }
+
+  // ── Variantes ────────────────────────────────
+  &--primary {
+    background: #007AFF;
+    color: #ffffff;
+
+    &:hover:not(.btn--disabled, .btn--loading) {
+      filter: brightness(1.08);
+    }
+  }
+
+  &--secondary {
+    background: rgba(0, 122, 255, 0.15);
+    color: #007AFF;
+
+    &:hover:not(.btn--disabled, .btn--loading) {
+      background: rgba(0, 122, 255, 0.22);
+    }
+  }
+
+  &--danger {
+    background: #FF3B30;
+    color: #ffffff;
+
+    &:hover:not(.btn--disabled, .btn--loading) {
+      filter: brightness(1.08);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: #007AFF;
+    border: 1.5px solid #007AFF;
+
+    &:hover:not(.btn--disabled, .btn--loading) {
+      background: rgba(0, 122, 255, 0.08);
+    }
+  }
+
+  // ── Estados ──────────────────────────────────
+  &--disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &--loading {
+    cursor: wait;
+    pointer-events: none;
+
+    .btn__label {
+      opacity: 0.6;
+    }
+  }
+}
+
+// ── Icono ────────────────────────────────────────
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+}
+
+// ── Spinner ──────────────────────────────────────
+.btn__spinner {
+  display: inline-flex;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    animation: spin 0.75s linear infinite;
+  }
+}
+
+.spinning {
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

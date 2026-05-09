@@ -1,0 +1,14 @@
+<div class="header-display">
+  <app-search-bar
+    placeholder="Buscar documentos..."
+    [(value)]="searchQuery"
+    (search)="onSearch($event)"
+  />
+  <div class="header-actions">
+    <app-view-toggle
+      [activeView]="activeView"
+      (viewChange)="onViewChange($event)"
+    />
+    <app-button label="Subir" variant="primary" size="md" iconLeft="upload" />
+  </div>
+</div>
