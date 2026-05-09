@@ -1,0 +1,37 @@
+:host {
+  display: inline-flex;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  background: #1c1c1e;
+  border: 1px solid #2c2c2e;
+  border-radius: 10px;
+  padding: 4px;
+  gap: 2px;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: #636366;
+    cursor: pointer;
+    transition: background 140ms ease, color 140ms ease;
+
+    &:hover:not(.toggle__btn--active) {
+      background: #2c2c2e;
+      color: #aeaeb2;
+    }
+
+    &--active {
+      background: #0a84ff;
+      color: #ffffff;
+    }
+  }
+}

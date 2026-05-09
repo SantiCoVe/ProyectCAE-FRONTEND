@@ -1,18 +1,18 @@
-/// <reference types="jasmine" />
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ButtonComponent } from './button.component';
 
-describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
+import { ViewToggleComponent } from './view-toggle.component';
+
+describe('ViewToggleComponent', () => {
+  let component: ViewToggleComponent;
+  let fixture: ComponentFixture<ViewToggleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonComponent]
+      imports: [ViewToggleComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ButtonComponent);
+    fixture = TestBed.createComponent(ViewToggleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

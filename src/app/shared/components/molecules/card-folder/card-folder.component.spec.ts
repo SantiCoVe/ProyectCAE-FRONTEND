@@ -1,18 +1,18 @@
-/// <reference types="jasmine" />
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ButtonComponent } from './button.component';
 
-describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
+import { CardFolderComponent } from './card-folder.component';
+
+describe('CardFolderComponent', () => {
+  let component: CardFolderComponent;
+  let fixture: ComponentFixture<CardFolderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonComponent]
+      imports: [CardFolderComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ButtonComponent);
+    fixture = TestBed.createComponent(CardFolderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

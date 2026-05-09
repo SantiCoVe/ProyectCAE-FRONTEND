@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { Home, Star, Clock3, Trash2 } from 'lucide-angular';
 import { LogoComponent } from '../../molecules/logo/logo.component';
 import { SidebarNavOptionComponent } from '../../molecules/sidebar-nav-option/sidebar-nav-option.component';
-
+import { ButtonComponent,ButtonClickEvent } from '../../atoms/button/button.component';
 @Component({
   selector: 'app-aside',
   standalone: true,
   imports: [
     LogoComponent,
-    SidebarNavOptionComponent
+    SidebarNavOptionComponent,
+    ButtonComponent
   ],
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.scss'
@@ -23,5 +24,9 @@ export class AsideComponent {
 
   setActiveSection(section: 'home' | 'favorites' | 'recent' | 'trash'): void {
     this.activeSection = section;
+  }
+   onSubir(event: ButtonClickEvent): void {
+    console.log('Subir clicked:', event);
+    // tu lógica aquí
   }
 }
