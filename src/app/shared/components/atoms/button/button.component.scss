@@ -1,24 +1,18 @@
-:host {
-  display: inline-flex;
-}
-
 .btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   border: none;
-  border-radius: 12px;
-  font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   position: relative;
   white-space: nowrap;
   user-select: none;
   transition:
-    filter 120ms ease,
-    transform 120ms ease,
-    opacity 120ms ease;
+  filter 120ms ease,
+  transform 120ms ease,
+  opacity 120ms ease;
 
   &:focus-visible {
     outline: 3px solid rgba(0, 122, 255, 0.5);
@@ -32,10 +26,10 @@
 
   // ── Tamaños ──────────────────────────────────
   &--sm {
-    padding: 7px 16px;
+    padding: 10px 12px;
     font-size: 14px;
     min-height: 34px;
-    border-radius: 10px;
+    border-radius: 6px;
   }
 
   &--md {
@@ -114,8 +108,8 @@
   font-size: 18px;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     display: block;
   }
 }
