@@ -1,0 +1,76 @@
+<div class="modal-overlay" *ngIf="visible && file" (click)="onOverlayClick($event)">
+  <div class="modal">
+
+    <div class="modal__header">
+      <span class="modal__title">Detalles del archivo</span>
+      <button class="modal__close" (click)="onClose()">
+        <lucide-angular [img]="XIcon" [size]="18" />
+      </button>
+    </div>
+
+    <div class="modal__preview">
+      <div class="modal__icon" [style.background]="file!.iconBg">
+        <lucide-angular [img]="FileIcon" [size]="32" [style.color]="file!.iconColor" />
+      </div>
+      <span class="modal__name">{{ file!.name }}</span>
+      <span class="modal__type"
+        [style.background]="typeColor + '33'"
+        [style.color]="typeColor">
+        {{ file!.type }}
+      </span>
+    </div>
+
+    <div class="modal__actions">
+      <button class="modal__action-btn" (click)="onDownload()">
+        <lucide-angular [img]="DownloadIcon" [size]="20" />
+        <span>Descargar</span>
+      </button>
+      <button class="modal__action-btn" (click)="onShare()">
+        <lucide-angular [img]="ShareIcon" [size]="20" />
+        <span>Compartir</span>
+      </button>
+      <button class="modal__action-btn"
+        [class.modal__action-btn--starred]="file!.starred"
+        (click)="onToggleStar()">
+        <lucide-angular [img]="StarIcon" [size]="20" />
+        <span>Favorito</span>
+      </button>
+      <button class="modal__action-btn modal__action-btn--danger" (click)="onDelete()">
+        <lucide-angular [img]="TrashIcon" [size]="20" />
+        <span>Eliminar</span>
+      </button>
+    </div>
+
+    <div class="modal__info">
+      <div class="modal__info-header">
+        <lucide-angular [img]="FileIcon" [size]="16" />
+        <span>Informacion del archivo</span>
+      </div>
+
+      <div class="modal__info-row">
+        <div class="modal__info-label">
+          <lucide-angular [img]="SizeIcon" [size]="15" />
+          <span>Tamaño</span>
+        </div>
+        <span class="modal__info-value">{{ file!.size }}</span>
+      </div>
+
+      <div class="modal__info-row">
+        <div class="modal__info-label">
+          <lucide-angular [img]="CalendarIcon" [size]="15" />
+          <span>Creado</span>
+        </div>
+        <span class="modal__info-value">{{ file!.created }}</span>
+      </div>
+
+      <div class="modal__info-row">
+        <div class="modal__info-label">
+          <lucide-angular [img]="ClockIcon" [size]="15" />
+          <span>Modificado</span>
+        </div>
+        <span class="modal__info-value">{{ file!.modified }}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

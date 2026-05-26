@@ -1,0 +1,29 @@
+<div class="card-doc" (click)="onCardClick()">
+  <div class="card-doc__top">
+    <div class="card-doc__icon" [style.background]="iconBg">
+      <ng-content select="[icon]" />
+    </div>
+
+    <div class="card-doc__meta">
+      <span class="card-doc__name">{{ name }}</span>
+      <div class="card-doc__tags">
+        <span class="card-doc__type"
+          [style.background]="typeColor + '22'"
+          [style.color]="typeColor">
+          {{ type }}
+        </span>
+        <span class="card-doc__size">{{ size }}</span>
+      </div>
+    </div>
+
+    <lucide-angular
+      [img]="StarIcon"
+      [size]="18"
+      class="card-doc__star"
+      [class.card-doc__star--active]="isStarred"
+      (click)="onStarClick($event)"
+    />
+  </div>
+
+  <span class="card-doc__date">{{ date }}</span>
+</div>

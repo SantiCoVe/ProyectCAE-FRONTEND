@@ -3,11 +3,30 @@
   overflow-y: auto;
   flex: 1;
 
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
   &__title {
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 16px;
+  }
+
+  &__ver-todos {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a84ff;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -34,15 +53,14 @@
   cursor: pointer;
   transition: background 140ms ease, border-color 140ms ease;
 
+  &:last-child { border-bottom: none; }
+
   &:hover {
     background: #242426;
     border-color: #3a3a3c;
   }
 
-  &__icon {
-    color: #0a84ff;
-    flex-shrink: 0;
-  }
+  &__icon { color: #0a84ff; flex-shrink: 0; }
 
   &__info {
     display: flex;
@@ -60,4 +78,10 @@
     font-size: 13px;
     color: #636366;
   }
+}
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
